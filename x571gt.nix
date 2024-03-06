@@ -44,6 +44,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.nix-ld.enable = true;
+
   security.rtkit.enable = true;
 
   services.flatpak.enable = true;
