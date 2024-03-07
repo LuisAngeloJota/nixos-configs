@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     brave
     ffmpeg
+    harfbuzz
     idevicerestore
     libimobiledevice
     unzip
@@ -45,6 +46,12 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libadwaita
+    harfbuzz
+    libimobiledevice
+    libplist    
+  ];
 
   security.rtkit.enable = true;
 
