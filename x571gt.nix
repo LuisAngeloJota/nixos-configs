@@ -16,6 +16,7 @@
     ffmpeg
     harfbuzz
     idevicerestore
+    ifuse
     libimobiledevice
     unzip
     virt-manager
