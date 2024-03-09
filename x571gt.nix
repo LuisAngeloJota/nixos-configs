@@ -19,7 +19,6 @@
     ifuse
     libimobiledevice
     unzip
-    virt-manager
     wget
     yt-dlp
   ];
@@ -53,6 +52,7 @@
     libimobiledevice
     libplist    
   ];
+  programs.virt-manager.enable = true;
 
   security.rtkit.enable = true;
 
