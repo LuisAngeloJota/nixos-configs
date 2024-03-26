@@ -5,16 +5,17 @@
   ];
   system.stateVersion = "23.11";
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
     "mitigations=off"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
 
   environment.systemPackages = with pkgs; [
     brave
     ffmpeg
+    git
     harfbuzz
     idevicerestore
     ifuse
@@ -31,6 +32,7 @@
     noto-fonts-emoji
   ];
 
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
   hardware.opengl.extraPackages = with pkgs; [
     intel-media-driver
   ];
@@ -48,14 +50,13 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    # Sideloader dependencies
     libadwaita
     harfbuzz
     libimobiledevice
     libplist    
   ];
   programs.virt-manager.enable = true;
-
-  security.rtkit.enable = true;
 
   services.flatpak.enable = true;
   services.printing.enable = true;
@@ -64,9 +65,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.enable = true;
   services.xserver.layout = "us";
-  #services.xserver.videoDrivers = [
-  #  "nvidia"
-  #];
+  services.xserver.videoDrivers = [
+    "nvidia"
+  ];
   services.xserver.xkbVariant = "colemak_dh";
 
   time.timeZone = "Asia/Manila";
