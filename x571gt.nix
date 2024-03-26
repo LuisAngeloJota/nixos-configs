@@ -50,7 +50,6 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    # Sideloader dependencies
     libadwaita
     harfbuzz
     libimobiledevice
