@@ -6,6 +6,11 @@
   boot.supportedFilesystems = [ "bcachefs" "vfat" ];
   
   networking.wireless.iwd.enable = true;
-  
+  networking.wireless.iwd.settings = {
+    General = {
+      EnableNetworkConfiguration = true;
+    }
+  }
+
   users.users.root.password = "nixos";
 }
