@@ -9,8 +9,8 @@
   networking.wireless.iwd.settings = {
     General = {
       EnableNetworkConfiguration = true;
-    }
-  }
+    };
+  };
 
   users.users.root.password = "nixos";
 }
