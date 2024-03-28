@@ -63,11 +63,11 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.enable = true;
-  services.xserver.layout = "us";
   services.xserver.videoDrivers = [
     "nvidia"
   ];
-  services.xserver.xkbVariant = "colemak_dh";
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "colemak_dh, qwerty";
 
   time.timeZone = "Asia/Manila";
 
