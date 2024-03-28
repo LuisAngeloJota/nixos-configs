@@ -12,5 +12,7 @@
     };
   };
 
-  users.users.root.password = "nixos";
+  services.getty.autologinUser = "root";
+
+  users.users.root.initialHashedPassword = "";
 }
